@@ -1,8 +1,8 @@
 import { StreamChat } from 'stream-chat';
 
-export const apiKey = ${{STREAM_API_KEY}} as string;
-export const apiSecret = ${{STREAM_API_SECRET}} as string;
-console.log(${{STREAM_API_KEY}});
+export const apiKey = process.env.STREAM_API_KEY as string;
+export const apiSecret = process.env.STREAM_API_SECRET as string;
+console.log(process.env.STREAM_API_KEY);
 
 if (!apiKey || !apiSecret) {
   throw new Error(
