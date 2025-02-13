@@ -28,6 +28,7 @@ setInterval(async () => {
 }, 5000);
 
 app.get('/', (req, res) => {
+  
   res.json({
     message: 'GetStream AI Server is running',
     apiKey: apiKey,
@@ -39,11 +40,13 @@ app.get('/', (req, res) => {
  * Handle the request to start the AI Agent
  */
 app.post('/start-ai-agent', async (req, res) => {
+
   const {
     channel_id,
     channel_type = 'messaging',
     platform = 'anthropic',
   } = req.body;
+ 
 
   // Simple validation
   if (!channel_id) {
@@ -77,6 +80,7 @@ app.post('/start-ai-agent', async (req, res) => {
       }
 
       await channel.watch();
+   
 
       const agent = await createAgent(
         user_id,
