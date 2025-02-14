@@ -8,6 +8,7 @@ import { apiKey, serverClient } from './serverClient';
 const app = express();
 app.use(express.json());
 app.use(cors({ origin: '*' }));
+console.log(process.env.STREAM_API_SECRET);
 
 // Map to store the AI Agent instances
 // [cid: string]: AI Agent
