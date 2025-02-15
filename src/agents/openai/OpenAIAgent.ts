@@ -29,7 +29,7 @@ export class OpenAIAgent implements AIAgent {
   init = async () => {
     const apiKey = process.env.OPENAI_API_KEY;
     if (!apiKey) {
-      throw new Error('OpenAI API key is required');
+      throw new Error('OpenAI API key is  required');
     }
 
     this.openai = new OpenAI({ apiKey });
