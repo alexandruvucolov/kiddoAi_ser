@@ -8,7 +8,7 @@ import { apiKey, serverClient } from './serverClient';
 const app = express();
 app.use(express.json());
 app.use(cors({ origin: '*' }));
-console.log(process.env.STREAM_API_SECRET);
+
 
 // Map to store the AI Agent instances
 // [cid: string]: AI Agent
@@ -48,7 +48,7 @@ app.post('/start-ai-agent', async (req, res) => {
     platform = 'anthropic',
   } = req.body;
  
-
+console.log('this is test>>>');
   // Simple validation
   if (!channel_id) {
     res.status(400).json({ error: 'Missing required fields' });
