@@ -27,7 +27,7 @@ export class OpenAIAgent implements AIAgent {
   getLastInteraction = (): number => this.lastInteractionTs;
 
   init = async () => {
-    const apiKey = {shared.OPENAI_API_KEY};
+    const apiKey = ${shared.OPENAI_API_KEY};
     if (!apiKey) {
       throw new Error('OpenAI API key is  required');
     }
